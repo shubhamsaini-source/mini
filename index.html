@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TicketAI — Classifier</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+
+<!-- Animated BG -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-brand">
+    <span class="brand-icon">🎫</span>
+    <span class="brand-name">TicketAI</span>
+  </div>
+  <div class="nav-links">
+    <a href="/" class="nav-link active">🔍 Classify</a>
+    <a href="/history" class="nav-link">📋 History</a>
+    <a href="/analytics" class="nav-link">📊 Analytics</a>
+    <a href="/about" class="nav-link">ℹ️ About</a>
+  </div>
+  <span class="nav-badge">MCA Mini Project</span>
+</nav>
+
+<div class="page-container">
+
+  <!-- Hero -->
+  <div class="hero animate-fadein">
+    <div class="hero-tag" id="heroTag">⚡ Powered by Naive Bayes + TF-IDF</div>
+    <h1 class="hero-title">Customer Support<br><span class="gradient-text">Ticket Classifier</span></h1>
+    <p class="hero-sub">Paste any support ticket and our AI will instantly classify it into the right category with confidence scores.</p>
+  </div>
+
+  <!-- Classifier Card -->
+  <div class="card animate-slideup" style="animation-delay:0.1s">
+    <div class="card-header">
+      <span class="card-icon">📝</span>
+      <div>
+        <div class="card-title">Enter Support Ticket</div>
+        <div class="card-sub">Describe the customer's issue in detail</div>
+      </div>
+    </div>
+
+    <div class="textarea-wrap">
+      <textarea id="ticketInput" placeholder="e.g. I was charged twice for my subscription and need a refund immediately..." maxlength="500" oninput="updateCounter()"></textarea>
+      <div class="char-counter"><span id="charCount">0</span>/500</div>
+    </div>
+
+    <div class="examples-label">✨ Quick Examples:</div>
+    <div class="examples">
+      <button class="ex-btn" onclick="setExample(this)">💳 Payment deducted twice</button>
+      <button class="ex-btn" onclick="setExample(this)">🔧 App keeps crashing</button>
+      <button class="ex-btn" onclick="setExample(this)">👤 Want to delete account</button>
+      <button class="ex-btn" onclick="setExample(this)">📦 Order not arrived yet</button>
+      <button class="ex-btn" onclick="setExample(this)">💬 What are working hours?</button>
+    </div>
+
+    <!-- Mode Toggle -->
+    <div class="mode-toggle-wrap">
+      <span class="mode-label">Mode:</span>
+      <div class="mode-toggle">
+        <button class="mode-btn active" id="btnML" onclick="setMode('ml')">🧮 ML (Naive Bayes)</button>
+        <button class="mode-btn" id="btnAI" onclick="setMode('ai')">✨ Gemini AI</button>
+      </div>
+      <span class="mode-hint" id="modeHint">Fast, offline classification</span>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-primary" id="classifyBtn" onclick="classify()">
+        <span class="btn-icon">🤖</span> Classify
+      </button>
+      <button class="btn-secondary" onclick="clearAll()">✕ Clear</button>
+    </div>
+  </div>
+
+  <!-- Result Card -->
+  <div class="card result-card" id="resultCard">
+    <div class="card-header">
+      <span class="card-icon">🤖</span>
+      <div>
+        <div class="card-title">AI Classification Result</div>
+        <div class="card-sub">Analyzed using Machine Learning</div>
+      </div>
+      <div class="ai-pulse"><span></span><span></span><span></span></div>
+    </div>
+    <div id="resultContent"></div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <span>Built with 🐍 Python · Flask · Naive Bayes · TF-IDF</span>
+  <span class="footer-sep">|</span>
+  <span>MCA 3rd Sem Mini Project</span>
+</footer>
+
+<script src="/static/bg.js"></script>
+<script src="/static/main.js"></script>
+</body>
+</html>

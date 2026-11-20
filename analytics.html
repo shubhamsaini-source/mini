@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TicketAI — Analytics</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+
+<nav class="navbar">
+  <div class="nav-brand">
+    <span class="brand-icon">🎫</span>
+    <span class="brand-name">TicketAI</span>
+  </div>
+  <div class="nav-links">
+    <a href="/" class="nav-link">🔍 Classify</a>
+    <a href="/history" class="nav-link">📋 History</a>
+    <a href="/analytics" class="nav-link active">📊 Analytics</a>
+    <a href="/about" class="nav-link">ℹ️ About</a>
+  </div>
+  <span class="nav-badge">MCA Mini Project</span>
+</nav>
+
+<div class="page-container">
+  <div class="hero animate-fadein">
+    <div class="hero-tag">📊 Data Insights</div>
+    <h1 class="hero-title">Ticket <span class="gradient-text">Analytics</span></h1>
+    <p class="hero-sub">Visual breakdown of all classified tickets and model performance.</p>
+  </div>
+
+  <!-- Stats Row -->
+  <div class="stats-row animate-slideup">
+    <div class="stat-card">
+      <div class="stat-icon">🎫</div>
+      <div class="stat-value" id="statTotal">0</div>
+      <div class="stat-label">Total Tickets</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🎯</div>
+      <div class="stat-value" id="statConf">0%</div>
+      <div class="stat-label">Avg Confidence</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🔴</div>
+      <div class="stat-value" id="statHigh">0</div>
+      <div class="stat-label">High Priority</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🟢</div>
+      <div class="stat-value" id="statLow">0</div>
+      <div class="stat-label">Low Priority</div>
+    </div>
+  </div>
+
+  <!-- Charts Row -->
+  <div class="charts-row">
+    <div class="card animate-slideup" style="animation-delay:0.1s;flex:1">
+      <div class="card-header">
+        <span class="card-icon">📊</span>
+        <div>
+          <div class="card-title">Category Distribution</div>
+          <div class="card-sub">Tickets per category</div>
+        </div>
+      </div>
+      <div id="categoryChart"></div>
+    </div>
+
+    <div class="card animate-slideup" style="animation-delay:0.2s;flex:1">
+      <div class="card-header">
+        <span class="card-icon">🚦</span>
+        <div>
+          <div class="card-title">Priority Breakdown</div>
+          <div class="card-sub">High / Medium / Low</div>
+        </div>
+      </div>
+      <div id="priorityChart"></div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <span>Built with 🐍 Python · Flask · Naive Bayes · TF-IDF</span>
+  <span class="footer-sep">|</span>
+  <span>MCA 3rd Sem Mini Project</span>
+</footer>
+
+<script src="/static/bg.js"></script>
+<script src="/static/analytics.js"></script>
+</body>
+</html>

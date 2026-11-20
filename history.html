@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TicketAI — History</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+
+<nav class="navbar">
+  <div class="nav-brand">
+    <span class="brand-icon">🎫</span>
+    <span class="brand-name">TicketAI</span>
+  </div>
+  <div class="nav-links">
+    <a href="/" class="nav-link">🔍 Classify</a>
+    <a href="/history" class="nav-link active">📋 History</a>
+    <a href="/analytics" class="nav-link">📊 Analytics</a>
+    <a href="/about" class="nav-link">ℹ️ About</a>
+  </div>
+  <span class="nav-badge">MCA Mini Project</span>
+</nav>
+
+<div class="page-container">
+  <div class="hero animate-fadein">
+    <div class="hero-tag">📋 Classification Log</div>
+    <h1 class="hero-title">Ticket <span class="gradient-text">History</span></h1>
+    <p class="hero-sub">All previously classified support tickets with their results.</p>
+  </div>
+
+  <div class="card animate-slideup">
+    <div class="card-header" style="justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span class="card-icon">📋</span>
+        <div>
+          <div class="card-title">Recent Classifications</div>
+          <div class="card-sub" id="historyCount">Loading...</div>
+        </div>
+      </div>
+      <button class="btn-danger" onclick="clearHistory()">🗑 Clear All</button>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterHistory('all', this)">All</button>
+      <button class="filter-btn" onclick="filterHistory('Billing', this)">💳 Billing</button>
+      <button class="filter-btn" onclick="filterHistory('Technical Support', this)">🔧 Technical</button>
+      <button class="filter-btn" onclick="filterHistory('Account Management', this)">👤 Account</button>
+      <button class="filter-btn" onclick="filterHistory('Shipping & Delivery', this)">📦 Shipping</button>
+      <button class="filter-btn" onclick="filterHistory('General Inquiry', this)">💬 General</button>
+    </div>
+
+    <div id="historyList"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>Built with 🐍 Python · Flask · Naive Bayes · TF-IDF</span>
+  <span class="footer-sep">|</span>
+  <span>MCA 3rd Sem Mini Project</span>
+</footer>
+
+<script src="/static/bg.js"></script>
+<script src="/static/history.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TicketAI — About</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+
+<nav class="navbar">
+  <div class="nav-brand">
+    <span class="brand-icon">🎫</span>
+    <span class="brand-name">TicketAI</span>
+  </div>
+  <div class="nav-links">
+    <a href="/" class="nav-link">🔍 Classify</a>
+    <a href="/history" class="nav-link">📋 History</a>
+    <a href="/analytics" class="nav-link">📊 Analytics</a>
+    <a href="/about" class="nav-link active">ℹ️ About</a>
+  </div>
+  <span class="nav-badge">MCA Mini Project</span>
+</nav>
+
+<div class="page-container">
+  <div class="hero animate-fadein">
+    <div class="hero-tag">ℹ️ Project Info</div>
+    <h1 class="hero-title">About <span class="gradient-text">TicketAI</span></h1>
+    <p class="hero-sub">An AI-powered customer support ticket classification system built for MCA 3rd Semester Mini Project.</p>
+  </div>
+
+  <!-- How it works -->
+  <div class="card animate-slideup">
+    <div class="card-header">
+      <span class="card-icon">🧠</span>
+      <div><div class="card-title">How the AI Works</div><div class="card-sub">Step-by-step pipeline</div></div>
+    </div>
+    <div class="pipeline">
+      <div class="pipe-step">
+        <div class="pipe-num">1</div>
+        <div class="pipe-icon">📝</div>
+        <div class="pipe-title">Input Text</div>
+        <div class="pipe-desc">User enters a support ticket in natural language</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step">
+        <div class="pipe-num">2</div>
+        <div class="pipe-icon">🔤</div>
+        <div class="pipe-title">Tokenization</div>
+        <div class="pipe-desc">Text is split into tokens, stop words removed, bigrams created</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step">
+        <div class="pipe-num">3</div>
+        <div class="pipe-icon">📐</div>
+        <div class="pipe-title">TF-IDF Scoring</div>
+        <div class="pipe-desc">Each token gets a weight based on frequency and importance</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step">
+        <div class="pipe-num">4</div>
+        <div class="pipe-icon">🤖</div>
+        <div class="pipe-title">Naive Bayes</div>
+        <div class="pipe-desc">Probabilistic classifier predicts the most likely category</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step">
+        <div class="pipe-num">5</div>
+        <div class="pipe-icon">✅</div>
+        <div class="pipe-title">Result</div>
+        <div class="pipe-desc">Category, confidence score, priority and response time shown</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div class="card animate-slideup" style="animation-delay:0.1s">
+    <div class="card-header">
+      <span class="card-icon">🏷️</span>
+      <div><div class="card-title">Supported Categories</div><div class="card-sub">5 classification labels</div></div>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-item" style="border-color:#e74c3c44">
+        <span class="cat-emoji">💳</span>
+        <div class="cat-name">Billing</div>
+        <div class="cat-desc">Payments, invoices, refunds, subscription issues</div>
+        <span class="cat-badge" style="background:#e74c3c22;color:#e74c3c">High Priority</span>
+      </div>
+      <div class="cat-item" style="border-color:#3498db44">
+        <span class="cat-emoji">🔧</span>
+        <div class="cat-name">Technical Support</div>
+        <div class="cat-desc">App errors, bugs, login problems, performance</div>
+        <span class="cat-badge" style="background:#3498db22;color:#3498db">High Priority</span>
+      </div>
+      <div class="cat-item" style="border-color:#9b59b644">
+        <span class="cat-emoji">👤</span>
+        <div class="cat-name">Account Management</div>
+        <div class="cat-desc">Profile updates, password reset, account settings</div>
+        <span class="cat-badge" style="background:#9b59b622;color:#9b59b6">Medium Priority</span>
+      </div>
+      <div class="cat-item" style="border-color:#e67e2244">
+        <span class="cat-emoji">📦</span>
+        <div class="cat-name">Shipping & Delivery</div>
+        <div class="cat-desc">Order tracking, delivery issues, returns</div>
+        <span class="cat-badge" style="background:#e67e2222;color:#e67e22">Medium Priority</span>
+      </div>
+      <div class="cat-item" style="border-color:#27ae6044">
+        <span class="cat-emoji">💬</span>
+        <div class="cat-name">General Inquiry</div>
+        <div class="cat-desc">General questions, policies, service info</div>
+        <span class="cat-badge" style="background:#27ae6022;color:#27ae60">Low Priority</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tech Stack -->
+  <div class="card animate-slideup" style="animation-delay:0.2s">
+    <div class="card-header">
+      <span class="card-icon">⚙️</span>
+      <div><div class="card-title">Tech Stack</div><div class="card-sub">Technologies used</div></div>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-item"><span>🐍</span><div>Python 3</div><div class="tech-sub">Core Language</div></div>
+      <div class="tech-item"><span>🌐</span><div>Flask</div><div class="tech-sub">Web Framework</div></div>
+      <div class="tech-item"><span>🤖</span><div>Naive Bayes</div><div class="tech-sub">ML Algorithm</div></div>
+      <div class="tech-item"><span>📐</span><div>TF-IDF</div><div class="tech-sub">Feature Extraction</div></div>
+      <div class="tech-item"><span>🎨</span><div>HTML/CSS/JS</div><div class="tech-sub">Frontend</div></div>
+      <div class="tech-item"><span>📊</span><div>JSON</div><div class="tech-sub">Data Storage</div></div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <span>Built with 🐍 Python · Flask · Naive Bayes · TF-IDF</span>
+  <span class="footer-sep">|</span>
+  <span>MCA 3rd Sem Mini Project</span>
+</footer>
+
+<script src="/static/bg.js"></script>
+<script>
+  document.querySelectorAll('.animate-slideup').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    setTimeout(() => {
+      el.style.transition = 'all 0.6s cubic-bezier(0.16,1,0.3,1)';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 100 + i * 120);
+  });
+</script>
+</body>
+</html>
